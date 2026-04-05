@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>✨ Welcome Adnan Bro | Typing + Mr.Phone Action ✨</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(145deg, #0a0f1e 0%, #0c1225 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', 'Poppins', 'Fira Code', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+      padding: 1.5rem;
+    }
+
+    /* main glassmorphic card */
+    .hero-card {
+      max-width: 820px;
+      width: 100%;
+      background: rgba(18, 25, 45, 0.65);
+      backdrop-filter: blur(12px);
+      border-radius: 3rem;
+      padding: 2.5rem 2rem 3rem;
+      box-shadow: 0 25px 45px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.08);
+      transition: transform 0.2s ease;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* typing area */
+    .typewriter-container {
+      margin-bottom: 2.8rem;
+    }
+
+    .greeting {
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #FFE6B0, #FFB347, #FF8C42);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      display: inline-block;
+      margin-bottom: 0.5rem;
+    }
+
+    .typed-text {
+      font-size: 3.3rem;
+      font-weight: 800;
+      font-family: 'Fira Code', 'JetBrains Mono', monospace;
+      color: #f3f6fc;
+      background: rgba(0, 0, 0, 0.3);
+      display: inline-block;
+      padding: 0.25rem 1rem;
+      border-radius: 60px;
+      backdrop-filter: blur(4px);
+      letter-spacing: 1px;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.2), 0 2px 4px rgba(255,255,255,0.05);
+    }
+
+    .typed-text::after {
+      content: '|';
+      display: inline-block;
+      margin-left: 6px;
+      font-weight: 500;
+      animation: blink 0.9s infinite;
+      color: #FFB347;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    .sub-message {
+      margin-top: 1rem;
+      font-size: 1rem;
+      color: #b7c9e2;
+      background: rgba(0, 0, 0, 0.3);
+      display: inline-block;
+      padding: 0.3rem 1.2rem;
+      border-radius: 40px;
+      backdrop-filter: blur(4px);
+      font-weight: 500;
+    }
+
+    /* button panel - now with 3 buttons */
+    .button-panel {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .glow-btn {
+      background: rgba(20, 30, 55, 0.8);
+      border: none;
+      outline: none;
+      padding: 0.9rem 1.8rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+      border-radius: 60px;
+      cursor: pointer;
+      backdrop-filter: blur(8px);
+      transition: all 0.25s ease;
+      font-family: inherit;
+      letter-spacing: 0.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #f0f3fa;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 215, 150, 0.4);
+      text-decoration: none;
+    }
+
+    /* special style for link button to behave like a real button */
+    .glow-btn-link {
+      text-decoration: none;
+      background: linear-gradient(120deg, #1e3a3f, #0e2a2f);
+      border-left: 3px solid #4cd3ff;
+      border-right: 3px solid #7ee0ff;
+    }
+
+    .glow-btn-link:hover {
+      transform: translateY(-5px);
+      scale: 1.02;
+      box-shadow: 0 15px 28px rgba(0, 0, 0, 0.4), 0 0 12px rgba(76, 211, 255, 0.6);
+      border-color: #a5edff;
+    }
+
+    .btn-primary {
+      background: linear-gradient(120deg, #2c3e66, #1a2a48);
+      border-left: 3px solid #ffb347;
+      border-right: 3px solid #ffb347;
+    }
+
+    .btn-secondary {
+      background: linear-gradient(120deg, #2a2f4b, #1e243f);
+      border-left: 3px solid #6c5ce7;
+      border-right: 3px solid #a29bfe;
+    }
+
+    .glow-btn:hover {
+      transform: translateY(-5px);
+      scale: 1.02;
+      box-shadow: 0 15px 28px rgba(0, 0, 0, 0.4), 0 0 12px rgba(255, 180, 70, 0.5);
+      border-color: #ffcd94;
+    }
+
+    .glow-btn:active {
+      transform: translateY(2px);
+      transition: 0.05s;
+    }
+
+    /* response area */
+    .response-area {
+      margin-top: 2.8rem;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 2rem;
+      padding: 1rem 1.5rem;
+      transition: all 0.2s;
+      backdrop-filter: blur(8px);
+      border: 1px dashed rgba(255, 200, 120, 0.5);
+    }
+
+    .response-text {
+      font-size: 1.25rem;
+      color: #e9f2ff;
+      font-weight: 500;
+      word-break: break-word;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .response-emoji {
+      font-size: 1.8rem;
+      filter: drop-shadow(2px 2px 6px rgba(0,0,0,0.3));
+    }
+
+    .footer-note {
+      margin-top: 2rem;
+      font-size: 0.75rem;
+      opacity: 0.6;
+      color: #9aaec9;
+      letter-spacing: 0.3px;
+    }
+
+    @media (max-width: 620px) {
+      .hero-card {
+        padding: 1.8rem 1.2rem 2rem;
+      }
+      .typed-text {
+        font-size: 2.2rem;
+      }
+      .greeting {
+        font-size: 1.8rem;
+      }
+      .glow-btn {
+        padding: 0.65rem 1.2rem;
+        font-size: 0.95rem;
+      }
+      .button-panel {
+        gap: 1rem;
+      }
+    }
+
+    /* small pulse animation for new response */
+    @keyframes gentlePop {
+      0% { opacity: 0.6; transform: scale(0.98);}
+      100% { opacity: 1; transform: scale(1);}
+    }
+    .pop-effect {
+      animation: gentlePop 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    }
+
+    /* special tooltip/link indicator */
+    .link-badge {
+      font-size: 0.85rem;
+      background: rgba(0,0,0,0.5);
+      border-radius: 30px;
+      padding: 2px 8px;
+      margin-left: 6px;
+      font-weight: normal;
+    }
+  </style>
+</head>
+<body>
+
+<div class="hero-card">
+  <div class="typewriter-container">
+    <div class="greeting">🌟 welcome,</div>
+    <div class="typed-text" id="dynamicMessage"></div>
+    <div class="sub-message">✨ interactive experience ✨</div>
+  </div>
+
+  <div class="button-panel">
+    <!-- Button 1: Celebrate (fun interactive) -->
+    <button class="glow-btn btn-primary" id="celebrateBtn">
+      <i>🎉</i> Celebrate
+    </button>
+    <!-- Button 2: Inspire (motivational) -->
+    <button class="glow-btn btn-secondary" id="inspireBtn">
+      <i>💡</i> Inspire
+    </button>
+    <!-- Button 3: LINK BUTTON - changed name to "Mr.Phone" but keeps the same link -->
+    <a href="https://app.xcloudphone.com/login" target="_blank" rel="noopener noreferrer" class="glow-btn glow-btn-link" id="mrPhoneLinkBtn">
+      <i>📱</i> Mr.Phone <span class="link-badge">🔗</span>
+    </a>
+  </div>
+
+  <div class="response-area" id="responseBox">
+    <div class="response-text" id="responseMsg">
+      <span class="response-emoji">🤝</span>
+      <span>click Celebrate, Inspire or visit Mr.Phone!</span>
+    </div>
+  </div>
+  <div class="footer-note">
+    ❤️ made for Adnan Bro | typed with style + Mr.Phone link ready
+  </div>
+</div>
+
+<script>
+  (function() {
+    // ----- TYPING ANIMATION (WELCOME ADNAN BRO) -----
+    const fullText = "Adnan Bro";   // the core typed text: "Adnan Bro"
+    const typedElement = document.getElementById("dynamicMessage");
+    let currentIndex = 0;
+    let isDeleting = false;
+    let timeoutId = null;
+
+    function typeEffect() {
+      if (!typedElement) return;
+      
+      if (!isDeleting) {
+        // typing phase
+        typedElement.textContent = fullText.substring(0, currentIndex + 1);
+        currentIndex++;
+        
+        // if fully typed, stop and keep cursor blinking
+        if (currentIndex === fullText.length) {
+          clearTimeout(timeoutId);
+          return;
+        }
+        timeoutId = setTimeout(typeEffect, 100); // typing speed
+      }
+    }
+    
+    function startTyping() {
+      if (timeoutId) clearTimeout(timeoutId);
+      currentIndex = 0;
+      isDeleting = false;
+      typedElement.textContent = "";
+      typeEffect();
+    }
+    
+    startTyping();
+    
+    // ---- BUTTON INTERACTIONS (CELEBRATE & INSPIRE) WITH RICH RESPONSES ----
+    const celebrateBtn = document.getElementById("celebrateBtn");
+    const inspireBtn = document.getElementById("inspireBtn");
+    const mrPhoneBtn = document.getElementById("mrPhoneLinkBtn");
+    const responseMsgDiv = document.getElementById("responseMsg");
+    const responseArea = document.getElementById("responseBox");
+    
+    // Helper to update response with a new message and emoji, with pop animation
+    function setResponse(emoji, mainMessage, additionalNote = "") {
+      if (!responseMsgDiv) return;
+      const newHtml = `
+        <span class="response-emoji">${emoji}</span>
+        <span>${mainMessage} ${additionalNote ? `<span style="font-size:0.9rem; opacity:0.8;">${additionalNote}</span>` : ""}</span>
+      `;
+      responseMsgDiv.innerHTML = newHtml;
+      if (responseArea) {
+        responseArea.classList.remove("pop-effect");
+        void responseArea.offsetWidth;
+        responseArea.classList.add("pop-effect");
+      }
+    }
+    
+    // dynamic fun messages for Celebrate & Inspire
+    const celebrateMessages = [
+      { emoji: "🎊", text: "Let's light up the sky! 🌟 Adnan Bro, you're legendary!" },
+      { emoji: "🎈", text: "BOOM! Celebration mode ON. Wishing you success & joy!" },
+      { emoji: "🎉", text: "Party time! 🥳 You bring good vibes, Adnan Bro!" },
+      { emoji: "🏆", text: "Champion mindset! Keep shining, bro. Celebrate every win!" },
+      { emoji: "✨", text: "Sparkles & cheers! Today is YOUR day, Adnan Bro!" }
+    ];
+    
+    const inspireMessages = [
+      { emoji: "🔥", text: "Stay hungry, stay humble. You got the fire, Adnan Bro!" },
+      { emoji: "💪", text: "Strength doesn't come from what you can do, it comes from overcoming. Keep pushing!" },
+      { emoji: "🧠", text: "Believe in your infinite potential. Every expert was once a beginner!" },
+      { emoji: "🌠", text: "Dream big, work smart, and trust your journey. The stars align for you!" },
+      { emoji: "📈", text: "Consistency > intensity. Small steps create massive impact. Go get it, bro!" },
+      { emoji: "💎", text: "You are stronger than any challenge. Shine like a diamond, Adnan Bro!" }
+    ];
+    
+    function getRandomMessage(arr) {
+      return arr[Math.floor(Math.random() * arr.length)];
+    }
+    
+    function handleCelebrate() {
+      const randomMsg = getRandomMessage(celebrateMessages);
+      setResponse(randomMsg.emoji, randomMsg.text, "🎯 Keep rocking!");
+      if (celebrateBtn) {
+        celebrateBtn.style.transform = "scale(0.98)";
+        setTimeout(() => { if(celebrateBtn) celebrateBtn.style.transform = ""; }, 120);
+      }
+    }
+    
+    function handleInspire() {
+      const randomMsg = getRandomMessage(inspireMessages);
+      setResponse(randomMsg.emoji, randomMsg.text, "🌟 Stay motivated");
+      if (inspireBtn) {
+        inspireBtn.style.transform = "scale(0.98)";
+        setTimeout(() => { if(inspireBtn) inspireBtn.style.transform = ""; }, 120);
+      }
+    }
+    
+    // Special handler for Mr.Phone Button: show confirmation message when clicked (still opens link)
+    // Because anchor tag with target="_blank" will open link, but we also show a nice feedback in response area.
+    function handleMrPhoneClick(e) {
+      // Show a cool message before navigation (but navigation happens instantly anyway because it's an anchor)
+      // We'll update response area for great UX, and link opens in new tab simultaneously.
+      setResponse("📱", "Opening Mr.Phone portal — stay productive & connected, Adnan Bro! 🚀", "Secure access");
+      // Optional: tiny bounce effect on button
+      if (mrPhoneBtn) {
+        mrPhoneBtn.style.transform = "scale(0.97)";
+        setTimeout(() => { if(mrPhoneBtn) mrPhoneBtn.style.transform = ""; }, 150);
+      }
+      // No preventDefault, link will naturally open because it's an <a> with href
+      // Also ensure the link works as expected.
+    }
+    
+    // Attach click handlers for interactive buttons
+    if (celebrateBtn) celebrateBtn.addEventListener("click", handleCelebrate);
+    if (inspireBtn) inspireBtn.addEventListener("click", handleInspire);
+    if (mrPhoneBtn) {
+      mrPhoneBtn.addEventListener("click", handleMrPhoneClick);
+      // Also add a small tooltip-like behavior to inform user it opens new tab
+      mrPhoneBtn.setAttribute("title", "Opens Mr.Phone login in new tab (app.xcloudphone.com)");
+    }
+    
+    // Keyboard accessibility for custom buttons (Celebrate & Inspire)
+    const interactiveBtns = [celebrateBtn, inspireBtn];
+    interactiveBtns.forEach(btn => {
+      if (btn) {
+        btn.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            btn.click();
+          }
+        });
+        btn.setAttribute("tabindex", "0");
+        btn.setAttribute("role", "button");
+      }
+    });
+    
+    // Also add accessibility for the Mr.Phone link button (already focusable as anchor)
+    if (mrPhoneBtn) {
+      mrPhoneBtn.setAttribute("tabindex", "0");
+      mrPhoneBtn.setAttribute("role", "button");
+      // optional: keydown event to mimic click (so pressing Enter triggers same behavior)
+      mrPhoneBtn.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          mrPhoneBtn.click();
+        }
+      });
+    }
+    
+    // Clear timeout on page unload to avoid memory
+    window.addEventListener("beforeunload", function() {
+      if (timeoutId) clearTimeout(timeoutId);
+    });
+    
+    // safety: if typing didn't start properly, restart
+    if (typedElement && typedElement.textContent === "") {
+      setTimeout(() => {
+        if (typedElement && typedElement.textContent === "") {
+          startTyping();
+        }
+      }, 50);
+    }
+    
+    // Additional console greeting with new branding
+    console.log("%c✨ Welcome Adnan Bro — Typing animation + Celebrate/Inspire + Mr.Phone Link Active ✨", "color: #ffb347; font-size: 14px; font-weight: bold;");
+    console.log("%c🔗 Mr.Phone button points to: https://app.xcloudphone.com/login", "color: #7ee0ff; font-size: 12px;");
+    
+    // Preload initial response with friendly message
+    // The default message already includes "Mr.Phone", it's consistent.
+    // For extra polish, ensure that the response area doesn't show old XCloud reference.
+    // Already updated in the HTML initial response text.
+  })();
+</script>
+</body>
+</html>
